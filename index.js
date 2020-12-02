@@ -9,6 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 /* BEGIN - create routes here */
+
 app.get('/users', (req, res) => res.json(users))
 
 
@@ -25,6 +26,7 @@ app.post('/users', (req, res) => {
   users.push(newUser)
   res.json(users)
 })
+
 
 app.put('/users/:id', (req, res) => {
   const found = users.filter(user => user._id === parseInt(req.params.id))
